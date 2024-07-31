@@ -26,7 +26,7 @@ def subtracao(img, img2):
 img = cv2.imread('imagens/pikachu2ComBackground.webp')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 gray_copy = gray.copy()
-gray_copy2 = gray.copy()
+
 img2 = np.ones(gray.shape, np.uint8) * 100
 img2_copy = img2.copy()
 
@@ -34,9 +34,7 @@ img3 = adicao(gray, img2)
 
 img4= subtracao(gray_copy, img2_copy)
 
-dst = cv2.addWeighted(gray, 0.7, img2, 0.3, 0)
 
-cv2.imshow('OpenCV', dst)
 cv2.imshow('Subtracao', img4)
 cv2.imshow('Adicao', img3)
 cv2.waitKey(0)

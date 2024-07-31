@@ -2,6 +2,7 @@ import cv2
 import matplotlib.pyplot as plt
 
 def calc_hist(img):
+    cv2.imshow("Imagem", img)
     hist = cv2.calcHist([img], [0], None, [256], [0, 256])
     plt.figure()
     plt.title('Grayscale histogram')
@@ -10,6 +11,7 @@ def calc_hist(img):
     plt.plot(hist)
     plt.xlim([0,256])
     plt.show()
+    cv2.waitKey(0)
 
 def mudar_intensidade(img):
     altura, largura = img.shape
@@ -37,7 +39,7 @@ def inverter_intensidade(img):
     cv2.imshow("Imagem", img)
     cv2.waitKey(0)
 
-img = cv2.imread("imagens/pikachu2ComBackground.webp")
+img = cv2.imread("imagens/barco.jpeg")
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 calc_hist(gray)
 

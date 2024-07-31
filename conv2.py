@@ -26,7 +26,6 @@ def conv(image, kernel):
     w = kernel_w//2
 
     image_conv = np.zeros(image.shape)
-    first_value = 0
 
     for i in range(h, image_h-h):
         for j in range(w, image_w-w):
